@@ -1,0 +1,11 @@
+tmate_task:
+  container:
+    image: ubuntu:22.04
+  install_script: |
+    apt-get update
+    apt-get install -y tmate
+  tmate_script: |
+    tmate -S /tmp/tmate.sock new-session -d  # Start detached session
+    sleep 2
+    tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'  # Print SSH URL to logs
+    sleep 600  # Keep alive for 10 min (adjust as needed)
