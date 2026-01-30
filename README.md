@@ -1,2 +1,2 @@
 # server-ci
-Cirrus CI for tmate
+Cirrus CI for debugging tmate session
